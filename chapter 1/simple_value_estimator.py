@@ -9,10 +9,10 @@ def estimate_home(size_in_sqft, num_bedroom):
   valueBySize = baseValue + (size_in_sqft * sqftCost)
 
   bedRoomIncValue = 10000
-  estimation = valueBySize(num_bedroom * bedRoomIncValue)
+  estimation = valueBySize + (num_bedroom * bedRoomIncValue)
   return estimation
 
 
-estimate = estimate_home(3800, 5):
+estimate = estimate_home(3800, 5)
 print("Estimated value:")
 print(estimate)
