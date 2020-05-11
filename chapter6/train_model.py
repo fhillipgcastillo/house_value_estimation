@@ -23,8 +23,7 @@ X = features_df.to_numpy()
 Y = df['sale_price'].to_numpy()
 # print(X[0])
 # Split the data set in a training and tests sets 70/30 %
-x_train, x_test, y_train, y_test = train_test_split(X, Y, test_size=0.3)
-
+x_train, x_test, y_train, y_test = train_test_split(X, Y, test_size=0.3, ramndo_state=0)
 # Fit regression model using GradientBoostingRegressor
 model = ensemble.GradientBoostingRegressor(
   n_estimators=3000,
@@ -32,7 +31,8 @@ model = ensemble.GradientBoostingRegressor(
   max_depth=6,
   min_samples_leaf=9,
   max_features=0.1,
-  loss='huber'
+  loss='huber',
+  ramndo_state=0
 )
 
 print("Training...")
