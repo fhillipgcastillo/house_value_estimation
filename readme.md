@@ -1,5 +1,6 @@
 
 in a data set, all values that determine the final result, are called features
+https://www.lynda.com/ajax/course/563030/download/exercise/600840
 
 x = features
 y = value/result

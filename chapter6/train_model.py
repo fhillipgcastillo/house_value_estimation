@@ -21,20 +21,21 @@ del features_df['sale_price']
 # Create the X and Y arrays
 X = features_df.to_numpy()
 Y = df['sale_price'].to_numpy()
-print(X[0])
+# print(X[0])
 # Split the data set in a training and tests sets 70/30 %
 x_train, x_test, y_train, y_test = train_test_split(X, Y, test_size=0.3)
 
 # Fit regression model using GradientBoostingRegressor
 model = ensemble.GradientBoostingRegressor(
-  n_estimators=1000,# how many decision to create to be more created
+  n_estimators=3000,
   learning_rate=0.1,
-  max_depth=6, #layer deep
+  max_depth=6,
   min_samples_leaf=9,
   max_features=0.1,
   loss='huber'
 )
 
+print("Training...")
 model.fit(x_train, y_train)
 
 # Save the trained model to a file so we can use it in other programs in future

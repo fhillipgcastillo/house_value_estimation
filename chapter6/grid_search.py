@@ -43,7 +43,7 @@ param_grid = {
 }
 
 # Define the grid search we want to run. Run it with 4 cpus in parallel
-gs_cv = GridSearchCV(model, param_grid, n_jobs=4)
+gs_cv = GridSearchCV(model, param_grid, n_jobs=7)
 
 # RUn the grid search - on only the training data
 gs_cv.fit(x_train, y_train)
@@ -53,13 +53,7 @@ print(gs_cv.best_params_)
 
 # after runing the output will look like
 # {'loss': 'huber', learning_rate':0.1,''}...
-#  n_estimators=1000,
-    # learning_rate=0.1,
-    # max_depth=6,
-    # min_samples_leaf=9,
-    # max_features=0.1,
-    # loss='huber',
-    # random_state=0
+
 
 # Find the error rate on the training set
 mse =  mean_absolute_error(y_train, model.predict(x_train))
